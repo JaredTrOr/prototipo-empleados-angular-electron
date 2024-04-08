@@ -6,7 +6,7 @@ import { Empleado } from '../models/Empleado';
 })
 export class EmpleadoService {
 
-  empleados: Empleado[] = [];
+  private empleados: Empleado[] = [];
 
   constructor() {
     this.empleados = [

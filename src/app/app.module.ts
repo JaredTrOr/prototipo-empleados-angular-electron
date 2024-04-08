@@ -11,6 +11,7 @@ import { EmpleadosComponent } from './pages/empleados/empleados.component';
 import { ListaEmpleadosComponent } from './pages/lista-empleados/lista-empleados.component';
 import { SucursalComponent } from './pages/sucursal/sucursal.component';
 import { ListaSucursalesComponent } from './pages/lista-sucursales/lista-sucursales.component';
+import { ListaMovimientosComponent } from './pages/lista-movimientos/lista-movimientos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ListaSucursalesComponent } from './pages/lista-sucursales/lista-sucursa
     EmpleadosComponent,
     ListaEmpleadosComponent,
     SucursalComponent,
-    ListaSucursalesComponent
+    ListaSucursalesComponent,
+    ListaMovimientosComponent
   ],
   imports: [
     BrowserModule,

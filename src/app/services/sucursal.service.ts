@@ -6,7 +6,7 @@ import { Sucursal } from '../models/Sucursal';
 })
 export class SucursalService {
 
-  sucursales: Sucursal[] = [];
+  private sucursales: Sucursal[] = [];
 
   constructor() {
     this.sucursales = [

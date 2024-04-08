@@ -22,11 +22,14 @@ function createWindow() {
     );
     
     // Open the DevTools.
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 
     mainWindow.on('closed', function () {
         mainWindow = null
     })
+
+    mainWindow.maximize();
+    mainWindow.removeMenu();
 }
 
 app.on('ready', createWindow)

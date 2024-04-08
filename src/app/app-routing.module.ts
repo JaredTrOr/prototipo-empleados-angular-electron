@@ -5,6 +5,7 @@ import { EmpleadosComponent } from './pages/empleados/empleados.component';
 import { ListaEmpleadosComponent } from './pages/lista-empleados/lista-empleados.component';
 import { SucursalComponent } from './pages/sucursal/sucursal.component';
 import { ListaSucursalesComponent } from './pages/lista-sucursales/lista-sucursales.component';
+import { ListaMovimientosComponent } from './pages/lista-movimientos/lista-movimientos.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'lista-sucursales',
     component: ListaSucursalesComponent
+  },
+  {
+    path: 'lista-movimientos',
+    component: ListaMovimientosComponent
   },
   {
     path: '**',

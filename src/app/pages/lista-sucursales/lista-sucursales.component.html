@@ -5,12 +5,14 @@
         <div class="col-lg-12">
             <div class="input-group mt-5 mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-                <input type="text" class="form-control" placeholder="Buscar por (nombre, dirección)" aria-label="Username" aria-describedby="basic-addon1">
+                <input [(ngModel)]="this.busqueda" type="text" class="form-control" placeholder="Buscar por (nombre, dirección)" aria-label="Username" aria-describedby="basic-addon1">
               </div>              
         </div>
     </div>
 
-    <table *ngIf="this.sucursales.length" class="table mt-5">
+    <p *ngIf="!this.sucursalesFiltradas().length" class="mt-5 fs-1 text-center">No hay sucursales :(</p>
+
+    <table *ngIf="this.sucursalesFiltradas().length" class="table mt-5">
         <thead>
             <th>ID</th>
             <th>Nombre sucursal</th>
@@ -20,7 +22,7 @@
         </thead>
 
         <tbody>
-            <tr *ngFor="let sucursal of this.sucursales">
+            <tr *ngFor="let sucursal of this.sucursalesFiltradas()">
                 <td>{{ sucursal.idSucursal }}</td>
                 <td>{{ sucursal.nombre }}</td>
                 <td>{{ sucursal.direccion }}</td>
