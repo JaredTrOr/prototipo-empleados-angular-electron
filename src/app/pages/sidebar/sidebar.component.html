@@ -1,6 +1,7 @@
 <section class="sidebar">
 
     <div class="accordion" id="accordionExample">
+        <a routerLink="/home" class="bg-warning">Home</a>
         <div class="accordion-item">
             <button class="p-5 accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#contenido-empleados" aria-expanded="false" aria-controls="contenido-empleados">
@@ -10,8 +11,8 @@
             
             <div id="contenido-empleados" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="">
-                    <a href="">Registro empleados</a>
-                    <a href="">Lista empleados</a>
+                    <a routerLink="/empleados">Registro empleados</a>
+                    <a routerLink="/lista-empleados">Lista empleados</a>
                 </div>
             </div>
         </div>
@@ -25,8 +26,8 @@
             
             <div id="contenido-sucursales" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="">
-                    <a href="">Registro sucursales</a>
-                    <a href="">Lista sucursales</a>
+                    <a routerLink="sucursal">Registro sucursales</a>
+                    <a routerLink="lista-sucursales">Lista sucursales</a>
                 </div>
             </div>
         </div>

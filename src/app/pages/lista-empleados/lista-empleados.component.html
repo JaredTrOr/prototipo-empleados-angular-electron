@@ -1,1 +1,54 @@
-<p>lista-empleados works!</p>
+<div class="row">
+    <h1>Lista de empleados</h1>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="input-group mt-5 mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input [(ngModel)]="this.busqueda" type="text" class="form-control" placeholder="Buscar por (nombre, apellido, departamento)" aria-label="Username" aria-describedby="basic-addon1">
+              </div>              
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-lg-4">
+            <p class="fs-3">Filtros</p>
+            <hr>
+
+            <div class="form-check form-switch">
+                <input [(ngModel)]="this.activo" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">{{ this.activo ? 'Activo' : 'Inactivo' }}</label>
+            </div>  
+        </div>
+    </div>
+
+    <p *ngIf="!this.empleadosFiltrados().length" class="mt-5 fs-1 text-center">No hay empleados :(</p>
+
+    <table *ngIf="this.empleadosFiltrados().length" class="table mt-5">
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Departamento</th>
+            <th>Sexo</th>
+            <th>Fecha de nacimiento</th>
+            <th>Acciones</th>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let empleado of this.empleadosFiltrados()">
+                <td>{{ empleado.idEmpleado }}</td>
+                <td>{{ empleado.nombre }}</td>
+                <td>{{ empleado.apellidos }}</td>
+                <td>{{ empleado.areaDepartamento }}</td>
+                <td>{{ empleado.sexo }}</td>
+                <td>{{ empleado.fechaNacimiento }}</td>
+                <td class="d-flex gap-3">
+                    <button class="btn btn-info">Modificar</button>
+                    <button class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
