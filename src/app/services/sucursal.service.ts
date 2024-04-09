@@ -43,7 +43,34 @@ export class SucursalService {
     ];
   }
 
+  getNuevaSucursal(): Sucursal {
+    return {
+      idSucursal: this.sucursales[this.sucursales.length - 1].idSucursal! + 1,
+      nombre: '',
+      direccion: '',
+      telefono: ''
+    };
+  }
+
   getSucursales(): Sucursal[] {
     return this.sucursales;
+  }
+
+  getSucursalById(sucursalId: number): Sucursal {
+    const [ sucursal ] = this.sucursales.filter(sucursal => sucursal.idSucursal === sucursalId);
+    return sucursal;
+  }
+
+  createSucursal(sucursal: Sucursal): void {
+    this.sucursales.push(sucursal);
+  }
+
+  deleteSucursal(sucursalId: number): void {
+    const [ sucursal ] = this.sucursales.filter(sucursal => sucursal.idSucursal === sucursalId);
+    this.sucursales.splice(this.sucursales.indexOf(sucursal), 1);
+  }
+
+  updateSucursal(sucursal: Sucursal): void {
+    this.sucursales[this.sucursales.indexOf(sucursal)] = sucursal;
   }
 }

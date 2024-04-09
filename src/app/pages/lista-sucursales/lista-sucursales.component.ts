@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SucursalService } from '../../services/sucursal.service';
 import { Sucursal } from '../../models/Sucursal';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-lista-sucursales',
@@ -22,5 +23,31 @@ export class ListaSucursalesComponent implements OnInit{
       sucursal.nombre.toLowerCase().includes(this.busqueda.toLowerCase()) ||
       sucursal.direccion.toLocaleLowerCase().includes(this.busqueda.toLowerCase())
     );
+  }
+
+  deleteSucursal(idSucursal: number): void {
+    
+    Swal.fire({
+      title: "¿Esta seguro de eliminar esta sucursal?",
+      text: "No será posible revertir los cambios",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: "Sí, borrar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        this.sucursalService.deleteSucursal(idSucursal);
+
+        Swal.fire({
+          title: "Eliminación realizada con éxito",
+          text: "La sucursal ha sido eliminado",
+          icon: "success"
+        });
+      }
+    });
+
   }
 }

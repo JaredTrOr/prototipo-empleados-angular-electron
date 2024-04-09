@@ -1,0 +1,29 @@
+<div class="row">
+    <span><button routerLink="/lista-sucursales" class="btn btn-light"><i class="fa-solid fa-arrow-left"></i> Volver</button></span>
+
+    <h1 class="mt-4">Registro de sucursales</h1>
+
+    <div class="row mt-5">
+
+        <div class="col-lg-4">
+            <p><label for="nombre">Nombre sucursal:</label></p>
+            <input [(ngModel)]="this.sucursal.nombre" id="nombre" type="text" class="form-control">
+        </div>
+
+        <div class="col-lg-4">
+            <p><label for="direccion">Dirección:</label></p>
+            <input [(ngModel)]="this.sucursal.direccion" id="direccion" type="text" class="form-control">
+        </div>
+
+        <div class="col-lg-4">
+            <p><label for="telefono">Teléfono:</label></p>
+            <input [(ngModel)]="this.sucursal.telefono" id="telefono" type="text" class="form-control">
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-lg-4">
+            <button (click)="this.updateSucursal()" class="btn btn-primary w-100">Registrar sucursal</button>
+        </div>
+    </div>
+</div>

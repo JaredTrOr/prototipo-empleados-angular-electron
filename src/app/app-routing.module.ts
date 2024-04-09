@@ -7,6 +7,7 @@ import { SucursalComponent } from './pages/sucursal/sucursal.component';
 import { ListaSucursalesComponent } from './pages/lista-sucursales/lista-sucursales.component';
 import { ListaMovimientosComponent } from './pages/lista-movimientos/lista-movimientos.component';
 import { ModificarEmpleadoComponent } from './pages/modificar-empleado/modificar-empleado.component';
+import { ModificarSucursalComponent } from './pages/modificar-sucursal/modificar-sucursal.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'lista-sucursales',
     component: ListaSucursalesComponent
+  },
+  {
+    path: 'modificar-sucursal/:id',
+    component: ModificarSucursalComponent
   },
   {
     path: 'lista-movimientos',

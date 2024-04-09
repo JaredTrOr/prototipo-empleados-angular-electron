@@ -28,8 +28,8 @@
                 <td>{{ sucursal.direccion }}</td>
                 <td>{{ sucursal.telefono }}</td>
                 <td class="d-flex gap-3">
-                    <button class="btn btn-info">Modificar</button>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <button routerLink="/modificar-sucursal/{{ sucursal.idSucursal }}" class="btn btn-info">Modificar</button>
+                    <button (click)="this.deleteSucursal(sucursal.idSucursal!)" class="btn btn-danger">Eliminar</button>
                 </td>
             </tr>
         </tbody>

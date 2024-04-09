@@ -14,6 +14,7 @@ import { ListaSucursalesComponent } from './pages/lista-sucursales/lista-sucursa
 import { ListaMovimientosComponent } from './pages/lista-movimientos/lista-movimientos.component';
 import { AltasBajasComponent } from './pages/altas-bajas/altas-bajas.component';
 import { ModificarEmpleadoComponent } from './pages/modificar-empleado/modificar-empleado.component';
+import { ModificarSucursalComponent } from './pages/modificar-sucursal/modificar-sucursal.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ModificarEmpleadoComponent } from './pages/modificar-empleado/modificar
     ListaSucursalesComponent,
     ListaMovimientosComponent,
     AltasBajasComponent,
-    ModificarEmpleadoComponent
+    ModificarEmpleadoComponent,
+    ModificarSucursalComponent
   ],
   imports: [
     BrowserModule,
