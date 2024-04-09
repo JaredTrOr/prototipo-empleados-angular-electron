@@ -10,7 +10,7 @@ export class Empleado {
     salario!: number;
     puesto!: string;
     areaDepartamento!: string;
-    sucursal!: string;
+    sucursal!: number;
     activo!: boolean;
     CURP!: string;
     RFC!: string;

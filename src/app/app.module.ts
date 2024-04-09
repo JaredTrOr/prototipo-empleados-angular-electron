@@ -12,6 +12,8 @@ import { ListaEmpleadosComponent } from './pages/lista-empleados/lista-empleados
 import { SucursalComponent } from './pages/sucursal/sucursal.component';
 import { ListaSucursalesComponent } from './pages/lista-sucursales/lista-sucursales.component';
 import { ListaMovimientosComponent } from './pages/lista-movimientos/lista-movimientos.component';
+import { AltasBajasComponent } from './pages/altas-bajas/altas-bajas.component';
+import { ModificarEmpleadoComponent } from './pages/modificar-empleado/modificar-empleado.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ListaMovimientosComponent } from './pages/lista-movimientos/lista-movim
     ListaEmpleadosComponent,
     SucursalComponent,
     ListaSucursalesComponent,
-    ListaMovimientosComponent
+    ListaMovimientosComponent,
+    AltasBajasComponent,
+    ModificarEmpleadoComponent
   ],
   imports: [
     BrowserModule,

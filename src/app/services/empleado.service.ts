@@ -22,7 +22,7 @@ export class EmpleadoService {
         salario: 25000,
         puesto: 'Gerente de Ventas',
         areaDepartamento: 'Ventas',
-        sucursal: 'Sucursal A',
+        sucursal: 1,
         activo: true,
         CURP: 'PERJ900515HDFZMN01',
         RFC: 'PERJ900515XXX',
@@ -40,7 +40,7 @@ export class EmpleadoService {
         salario: 20000,
         puesto: 'Analista de Sistemas',
         areaDepartamento: 'Tecnología de la Información',
-        sucursal: 'Sucursal B',
+        sucursal: 2,
         activo: true,
         CURP: 'LOMM881020MDFXYZ05',
         RFC: 'LOMM881020XXX',
@@ -58,7 +58,7 @@ export class EmpleadoService {
         salario: 18000,
         puesto: 'Contador',
         areaDepartamento: 'Finanzas',
-        sucursal: 'Sucursal C',
+        sucursal: 3,
         activo: true,
         CURP: 'GARP950310HDFXYZ02',
         RFC: 'GARP950310XXX',
@@ -76,7 +76,7 @@ export class EmpleadoService {
         salario: 22000,
         puesto: 'Jefe de Recursos Humanos',
         areaDepartamento: 'Recursos Humanos',
-        sucursal: 'Sucursal D',
+        sucursal: 4,
         activo: false,
         CURP: 'MAGA920805MDFXYZ08',
         RFC: 'MAGA920805XXX',
@@ -94,7 +94,7 @@ export class EmpleadoService {
         salario: 19000,
         puesto: 'Asistente Administrativo',
         areaDepartamento: 'Administración',
-        sucursal: 'Sucursal E',
+        sucursal: 5,
         activo: false,
         CURP: 'HEJC871225MDFXYZ03',
         RFC: 'HEJC871225XXX',
@@ -106,4 +106,44 @@ export class EmpleadoService {
   getEmpleados(): Empleado[] {
     return this.empleados;
   }
+
+  getNuevoEmpleado(): Empleado {
+    return {
+      idEmpleado: this.empleados[this.empleados.length - 1].idEmpleado! + 1,
+      nombre: '',
+      apellidos: '',
+      sexo: 'Masculino',
+      fechaNacimiento: 'dd/mm/yyyy',
+      domicilio: '',
+      telefono: '',
+      correoElectronico: '',
+      salario: 0,
+      puesto: '',
+      areaDepartamento: '',
+      sucursal:  1,
+      activo: true,
+      CURP: '',
+      RFC: '',
+      NSS: ''
+    }
+  }
+
+  getEmpleadoById(empleadoId: number): Empleado {
+    const [ empleado ] = this.empleados.filter(empleado => empleado.idEmpleado === empleadoId);
+    return empleado;
+  }
+
+  createEmpleado(empleado: Empleado): void {
+    this.empleados.push(empleado);
+  }
+
+  deleteEmpleado(empleadoId: number): void {
+    const [ empleado ] = this.empleados.filter(empleado => empleado.idEmpleado === empleadoId);
+    this.empleados.splice(this.empleados.indexOf(empleado), 1);
+  }
+
+  updateEmpleado(empleado: Empleado): void {
+    this.empleados[this.empleados.indexOf(empleado)] = empleado;
+  }
+  
 }

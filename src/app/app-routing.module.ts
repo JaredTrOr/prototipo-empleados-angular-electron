@@ -6,6 +6,7 @@ import { ListaEmpleadosComponent } from './pages/lista-empleados/lista-empleados
 import { SucursalComponent } from './pages/sucursal/sucursal.component';
 import { ListaSucursalesComponent } from './pages/lista-sucursales/lista-sucursales.component';
 import { ListaMovimientosComponent } from './pages/lista-movimientos/lista-movimientos.component';
+import { ModificarEmpleadoComponent } from './pages/modificar-empleado/modificar-empleado.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'lista-empleados',
     component: ListaEmpleadosComponent
+  },
+  {
+    path: 'modificar-empleado/:id',
+    component: ModificarEmpleadoComponent
   },
   {
     path: 'sucursal',

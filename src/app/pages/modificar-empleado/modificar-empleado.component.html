@@ -1,22 +1,22 @@
 <div class="row">
-
     <div class="row">
-        <h1>Registro de empleados</h1>
+        <span><button routerLink="/lista-empleados" class="btn btn-light"><i class="fa-solid fa-arrow-left"></i> Volver</button></span>
+        <h1 class="mt-4">Modificar empleado</h1>
         <p class="mt-5 fs-5 fw-bold">Información personal</p>
 
         <div class="col-lg-3 mt-2">
             <p><label for="nombre">Nombre:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.nombre" id="nombre" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.nombre" id="nombre" type="text" class="form-control">
         </div>
 
         <div class="col-lg-3 mt-2">
             <p><label for="apellidos">Apellidos:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.apellidos" id="apellidos" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.apellidos" id="apellidos" type="text" class="form-control">
         </div>
 
         <div class="col-lg-3 mt-2">
             <p><label for="sexo">Sexo:</label></p>
-            <select [(ngModel)]="this.nuevoEmpleado.sexo" name="" id="sexo" class="form-control">
+            <select [(ngModel)]="this.empleado.sexo" name="" id="sexo" class="form-control">
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
             </select>
@@ -24,7 +24,7 @@
 
         <div class="col-lg-3 mt-2">
             <p><label for="fecha-nacimiento">Fecha nacimiento:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.fechaNacimiento" id="fecha-nacimiento" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.fechaNacimiento" id="fecha-nacimiento" type="text" class="form-control">
         </div>
     </div>
     
@@ -33,17 +33,17 @@
 
         <div class="col-lg-6 mt-2">
             <p><label for="domicilio">Domicilio:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.domicilio" id="domicilio" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.domicilio" id="domicilio" type="text" class="form-control">
         </div>
 
         <div class="col-lg-3 mt-2">
             <p><label for="correo">Correo electrónico:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.correoElectronico" id="correo" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.correoElectronico" id="correo" type="text" class="form-control">
         </div>
 
         <div class="col-lg-3 mt-2">
             <p><label for="telefono">Teléfono / Celular:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.telefono" id="telefono" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.telefono" id="telefono" type="text" class="form-control">
         </div>
     </div>
 
@@ -52,8 +52,8 @@
 
         <div class="col-lg-12 mt-2">
             <div class="form-check form-switch">
-                <input [(ngModel)]="this.nuevoEmpleado.activo" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                <label class="form-check-label" for="flexSwitchCheckChecked">{{ this.nuevoEmpleado.activo ? 'Activo' : 'Inactivo'}}</label>
+                <input [(ngModel)]="this.empleado.activo" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">{{ this.empleado.activo ? 'Activo' : 'Inactivo'}}</label>
             </div>          
         </div>
     </div>
@@ -62,22 +62,22 @@
     <div class="row mt-4">
         <div class="col-lg-3">
             <p><label for="salario">Salario:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.salario" id="salario" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.salario" id="salario" type="text" class="form-control">
         </div>
     
         <div class="col-lg-3 mt-2">
             <p><label for="puesto">Puesto:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.puesto" id="salario" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.puesto" id="salario" type="text" class="form-control">
         </div>
     
         <div class="col-lg-3 mt-2">
             <p><label for="area">Área o departamento:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.areaDepartamento" id="area" type="text" class="form-control">
+            <input [(ngModel)]="this.empleado.areaDepartamento" id="area" type="text" class="form-control">
         </div>
 
         <div class="col-lg-3 mt-2">
             <p><label for="sucursal">Sucursal:</label></p>
-            <select [(ngModel)]="this.nuevoEmpleado.sucursal" name="" id="sucursal" class="form-control">
+            <select [(ngModel)]="this.empleado.sucursal" name="" id="sucursal" class="form-control">
                 <option *ngFor="let sucursal of this.sucursales" value="{{ sucursal.idSucursal }}">{{ sucursal.nombre }}</option>
             </select>
         </div>
@@ -87,23 +87,23 @@
         <p class="mt-5 fs-5 fw-bold">Documentación:</p>
         <div class="col-lg-4">
             <p><label for="curp">CURP:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.CURP" id="curp" class="form-control" type="text">
+            <input [(ngModel)]="this.empleado.CURP" id="curp" class="form-control" type="text">
         </div>
 
         <div class="col-lg-4">
             <p><label for="rfc">RFC:</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.RFC" id="rfc" class="form-control" type="text">
+            <input [(ngModel)]="this.empleado.RFC" id="rfc" class="form-control" type="text">
         </div>
 
         <div class="col-lg-4">
             <p><label for="nss">Número de seguro social (NSS)</label></p>
-            <input [(ngModel)]="this.nuevoEmpleado.NSS" id="nss" class="form-control" type="text">
+            <input [(ngModel)]="this.empleado.NSS" id="nss" class="form-control" type="text">
         </div>
     </div>
 
     <div class="row mt-5">
         <div class="col-lg-4">
-            <button (click)="this.createEmpleado()" class="btn btn-primary w-100">Registrar empleado</button>
+            <button (click)="this.updateEmpleado()" class="btn btn-primary w-100">Modificar empleado</button>
         </div>
     </div>
     
