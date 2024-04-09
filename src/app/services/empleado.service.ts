@@ -145,5 +145,8 @@ export class EmpleadoService {
   updateEmpleado(empleado: Empleado): void {
     this.empleados[this.empleados.indexOf(empleado)] = empleado;
   }
-  
+
+  getCantidadEmpleadosActivos(): number {
+    return this.empleados.filter(empleado => empleado.activo).length;
+  }
 }

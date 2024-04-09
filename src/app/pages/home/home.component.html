@@ -12,13 +12,13 @@
                 <i class="fa-regular fa-user d-flex align-items-center icono-usuario-grande"></i>
                 
                 <div class="informacion-usuarios-activos">
-                    <div class="numero-usuarios-activos">50</div>
+                    <div class="numero-usuarios-activos">{{ this.numeroEmpleados }}</div>
                     <div>Usuarios activos</div>
                 </div>
 
             </div>
 
-            <div class="mt-3 agregar-empleados d-flex justify-content-between align-items-center">
+            <div routerLink="/empleados" class="mt-3 agregar-empleados d-flex justify-content-between align-items-center">
                 <span>Registrar empleados</span>
                 <i class="fa-solid fa-arrow-right fa-lg"></i> 
             </div>
