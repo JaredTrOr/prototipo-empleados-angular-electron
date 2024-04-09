@@ -7,6 +7,7 @@ import { Movimientos } from '../models/Movimientos';
 export class MovimientosService {
 
   private movimientos: Movimientos[] = [];
+  date = new Date();
 
   constructor() {
     this.movimientos = [
@@ -51,4 +52,20 @@ export class MovimientosService {
   getMovimientos(): Movimientos[] {
     return this.movimientos;
   }
+
+  createMovimiento(
+      idEmpleado: number, 
+      movimiento: { descripcion: string, tipoMovimiento: string }
+    ): void 
+    {
+      const { descripcion, tipoMovimiento } = movimiento;
+      
+      this.movimientos.push({
+        idMovimiento: this.movimientos[this.movimientos.length - 1].idMovimiento! + 1,
+        idEmpleado,
+        descripcion,
+        tipoMovimiento,
+        fecha: `${this.date.getDate()}-${this.date.getMonth()}-${this.date.getFullYear()}`
+      });
+    }
 }

@@ -96,8 +96,21 @@
         </div>
 
         <div class="col-lg-4">
-            <p><label for="nss">Número de seguro social (NSS)</label></p>
+            <p><label for="nss">Número de seguro social (NSS):</label></p>
             <input [(ngModel)]="this.empleado.NSS" id="nss" class="form-control" type="text">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <p class="fs-5 fw-bold">Descripción de movimiento:</p>
+        <div class="col-lg-4">
+            <p><label for="descripcion">Descripción: </label></p>
+            <input [(ngModel)]="this.movimiento.descripcion" id="descripcion" class="form-control" type="text">
+        </div>
+
+        <div class="col-lg-4">
+            <p><label for="tipoMovimiento">Tipo de movimiento: </label></p>
+            <input [(ngModel)]="this.movimiento.tipoMovimiento" id="tipoMovimiento" class="form-control" type="text">
         </div>
     </div>
 
