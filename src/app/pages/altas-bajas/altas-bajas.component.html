@@ -1,1 +1,45 @@
-<p>altas-bajas works!</p>
+<h1>Consultar altas y bajas</h1>
+
+<div class="row mt-5">
+    <div class="col-lg-6">
+        <h2>Altas</h2>
+        <table class="table mt-5">
+            <thead>
+                <th>ID altas</th>
+                <th>ID empleado</th>
+                <th>Fecha ingreso</th>
+                <th>Descripción</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let alta of altas">
+                    <td>{{ alta.idAltas }}</td>
+                    <td>{{ alta.idEmpleado }}</td>
+                    <td>{{ alta.fechaIngreso }}</td>
+                    <td>{{ alta.descripcion }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-lg-6">
+        <h2>Bajas</h2>
+        <table class="table mt-5">
+            <thead>
+                <th>ID bajas</th>
+                <th>ID empleado</th>
+                <th>Fecha salida</th>
+                <th>Descripción</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let baja of bajas">
+                    <td>{{ baja.idBajas }}</td>
+                    <td>{{ baja.idEmpleado }}</td>
+                    <td>{{ baja.fechaSalida }}</td>
+                    <td>{{ baja.descripcion }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

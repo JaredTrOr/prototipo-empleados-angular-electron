@@ -45,7 +45,7 @@
                 <td>{{ empleado.fechaNacimiento }}</td>
                 <td class="d-flex gap-3">
                     <button routerLink="/modificar-empleado/{{ empleado.idEmpleado }}" class="btn btn-info">Modificar</button>
-                    <button (click)="deleteEmpleado(empleado.idEmpleado!)" class="btn btn-danger">Eliminar</button>
+                    <button (click)="deleteEmpleado(empleado)" class="btn btn-danger">Eliminar</button>
                 </td>
             </tr>
         </tbody>

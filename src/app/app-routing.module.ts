@@ -8,6 +8,7 @@ import { ListaSucursalesComponent } from './pages/lista-sucursales/lista-sucursa
 import { ListaMovimientosComponent } from './pages/lista-movimientos/lista-movimientos.component';
 import { ModificarEmpleadoComponent } from './pages/modificar-empleado/modificar-empleado.component';
 import { ModificarSucursalComponent } from './pages/modificar-sucursal/modificar-sucursal.component';
+import { AltasBajasComponent } from './pages/altas-bajas/altas-bajas.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'lista-movimientos',
     component: ListaMovimientosComponent
+  },
+  {
+    path: 'altas-bajas',
+    component: AltasBajasComponent 
   },
   {
     path: '**',

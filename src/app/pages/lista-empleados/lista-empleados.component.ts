@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmpleadoService } from '../../services/empleado.service';
 import { Empleado } from '../../models/Empleado';
 import Swal from 'sweetalert2';
+import { AltasBajasEmpleadosService } from '../../services/altas-bajas-empleados.service';
 
 @Component({
   selector: 'app-lista-empleados',
@@ -14,7 +15,10 @@ export class ListaEmpleadosComponent implements OnInit{
   busqueda: string = '';
   activo: boolean = true;
 
-  constructor(private empleadoService: EmpleadoService) { }
+  constructor(
+    private empleadoService: EmpleadoService, 
+    private altasBajasEmpleadosService: AltasBajasEmpleadosService
+  ) { }
 
   ngOnInit(): void {
     this.empleados = this.empleadoService.getEmpleados();
@@ -29,7 +33,7 @@ export class ListaEmpleadosComponent implements OnInit{
     );
   }
 
-  deleteEmpleado(empleadoId: number): void {
+  deleteEmpleado(empleado: Empleado): void {
     Swal.fire({
       title: "¿Esta seguro de eliminar este empleado?",
       text: "No será posible revertir los cambios",
@@ -42,7 +46,9 @@ export class ListaEmpleadosComponent implements OnInit{
     }).then((result) => {
       if (result.isConfirmed) {
 
-        this.empleadoService.deleteEmpleado(empleadoId);
+        let descripcionBaja: string = 'Baja empleado '+empleado.nombre+' '+empleado.apellidos;
+        this.altasBajasEmpleadosService.createBajaEmpleado(empleado.idEmpleado!, descripcionBaja);
+        this.empleadoService.deleteEmpleado(empleado.idEmpleado!);
 
         Swal.fire({
           title: "Eliminación realizada con éxito",

@@ -1,4 +1,4 @@
-export class Altas {
+export class Bajas {
     idBajas?: number;
     fechaSalida!: string;
     descripcion!: string;
